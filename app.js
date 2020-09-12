@@ -28,6 +28,7 @@ app.use(userRoutes)
 app.use(apiRoutes)
 app.use(adminRoutes)
 
+// for heroku deployement
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static(path.resolve(__dirname, 'client', 'build')));
   app.get('*', (req, res)=>{
