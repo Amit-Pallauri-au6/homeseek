@@ -11,7 +11,7 @@ export const createPayment = (payment) => async (dispatch, getState) => {
             'Content-Type': 'application/json',
             'Authorization': storage.token
         }
-        const { data } = await axios.post(`${}/user/pay`, payment, {headers: headers})
+        const { data } = await axios.post(`/user/pay`, payment, {headers: headers})
         //console.log(data)
         dispatch({
             type: CREATE_PAYMENT,
@@ -38,7 +38,7 @@ export const verifytokenPayments = (details) => async(dispatch, getState) => {
             'Content-Type': 'application/json',
             'Authorization': storage.token
         }
-        const { data } = await axios.post(`${}/user/tokenpay/verify`, details, {headers: headers})
+        const { data } = await axios.post(`/user/tokenpay/verify`, details, {headers: headers})
         //console.log(data)
         dispatch({
             type: PAYMENT_SUCCESS,
@@ -65,7 +65,7 @@ export const verifyDepositPayments = (details) => async(dispatch, getState) => {
             'Content-Type': 'application/json',
             'Authorization': storage.token
         }
-        const { data } = await axios.post(`${}/user/depositpay/verify`, details, {headers: headers})
+        const { data } = await axios.post(`/user/depositpay/verify`, details, {headers: headers})
         console.log(data)
         dispatch({
             type: PAYMENT_SUCCESS,
@@ -96,7 +96,7 @@ export const verifyRentPayments = (details) => async(dispatch, getState) => {
             'Content-Type': 'application/json',
             'Authorization': storage.token
         }
-        const { data } = await axios.post(`${}/user/rentpay/verify`, details, {headers: headers})
+        const { data } = await axios.post(`/user/rentpay/verify`, details, {headers: headers})
         console.log(data)
         dispatch({
             type: PAYMENT_SUCCESS,
